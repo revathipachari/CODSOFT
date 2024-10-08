@@ -1,10 +1,4 @@
-# To-Do List application in Python
-
-# List to store the tasks
 tasks = []
-
-
-# Function to display the menu
 def display_menu():
     print("\n---- To-Do List Menu ----")
     print("1. View Tasks")
@@ -13,8 +7,6 @@ def display_menu():
     print("4. Delete Task")
     print("5. Exit")
 
-
-# Function to view all tasks
 def view_tasks():
     if len(tasks) == 0:
         print("\nYour to-do list is empty.")
@@ -24,15 +16,11 @@ def view_tasks():
             status = "Completed" if task['completed'] else "Incomplete"
             print(f"{i}. {task['description']} - [{status}]")
 
-
-# Function to add a new task
 def add_task():
     task_description = input("\nEnter task description: ")
     tasks.append({"description": task_description, "completed": False})
     print(f"Task '{task_description}' added!")
 
-
-# Function to update a task (mark as complete or edit)
 def update_task():
     view_tasks()
     task_num = int(input("\nEnter the task number to update: "))
@@ -54,9 +42,7 @@ def update_task():
             print("Invalid option.")
     else:
         print("Invalid task number.")
-
-
-# Function to delete a task
+        
 def delete_task():
     view_tasks()
     task_num = int(input("\nEnter the task number to delete: "))
@@ -67,8 +53,6 @@ def delete_task():
     else:
         print("Invalid task number.")
 
-
-# Main program loop
 def main():
     while True:
         display_menu()
@@ -88,7 +72,5 @@ def main():
         else:
             print("Invalid option. Please try again.")
 
-
-# Run the main function
 if __name__ == "__main__":
     main()
